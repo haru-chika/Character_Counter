@@ -40,5 +40,30 @@ resetButton.addEventListener('click', () => {
     updateCharacterCounts(); // カウントをリセット
 });
 
+const titleElement = document.querySelector('h1');
+const originalTitle = "リアルタイム文字数カウンター";
+const brokenTitle = "リアルタイム<br>文字数カウンター";
+
+function adjustTitleForWidth() {
+    if (window.innerWidth <= 768) { // 例として768pxをブレークポイントとします
+        if (titleElement.innerHTML !== brokenTitle) {
+            titleElement.innerHTML = brokenTitle;
+        }
+    } else {
+        if (titleElement.innerHTML !== originalTitle) {
+            titleElement.innerHTML = originalTitle;
+        }
+    }
+}
+
+// イベントリスナーの設定
+textInput.addEventListener('input', updateCharacterCounts);
+resetButton.addEventListener('click', () => {
+    textInput.value = '';
+    updateCharacterCounts(); // カウントをリセット
+});
+window.addEventListener('resize', adjustTitleForWidth); // ウィンドウのリサイズを監視
+
 // 初期表示
 updateCharacterCounts();
+adjustTitleForWidth(); // 初期ロード時にも調整
