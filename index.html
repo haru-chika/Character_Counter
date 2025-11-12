@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リアルタイム文字数カウンター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>リアルタイム文字数カウンター</h1>
+        <textarea id="textInput" placeholder="ここにテキストを入力してください..."></textarea>
+        <button id="resetButton">リセット</button>
+        <div class="counter-group">
+            <p class="main-counter">文字数: <span id="charCountTotal">0</span></p>
+            <div class="sub-counters">
+                <p>改行を除く: <span id="charCountNoNewlines">0</span></p>
+                <p>空白を除く: <span id="charCountNoSpaces">0</span></p>
+                <p>改行・空白を除く: <span id="charCountNoNewlinesNoSpaces">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
