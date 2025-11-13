@@ -2,7 +2,6 @@ const textInput = document.getElementById('textInput');
 const resetButton = document.getElementById('resetButton');
 const charCountTotal = document.getElementById('charCountTotal');
 const charCountNoNewlines = document.getElementById('charCountNoNewlines');
-const charCountNoSpaces = document.getElementById('charCountNoSpaces');
 const charCountNoNewlinesNoSpaces = document.getElementById('charCountNoNewlinesNoSpaces');
 
 // テキストエリアの自動高さ調整
@@ -21,10 +20,6 @@ function updateCharacterCounts() {
     // 改行を除いた文字数
     const textNoNewlines = text.replace(/(\r\n|\n|\r)/g, '');
     charCountNoNewlines.textContent = textNoNewlines.length;
-
-    // 空白を除いた文字数
-    const textNoSpaces = text.replace(/\s/g, '');
-    charCountNoSpaces.textContent = textNoSpaces.length;
 
     // 改行・空白を除いた文字数
     const textNoNewlinesNoSpaces = text.replace(/(\r\n|\n|\r|\s)/g, '');
