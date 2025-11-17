@@ -3,6 +3,7 @@ const resetButton = document.getElementById('resetButton');
 const charCountTotal = document.getElementById('charCountTotal');
 const charCountNoNewlines = document.getElementById('charCountNoNewlines');
 const charCountNoNewlinesNoSpaces = document.getElementById('charCountNoNewlinesNoSpaces');
+const copyButton = document.getElementById('copyButton');
 
 // テキストエリアの自動高さ調整
 function adjustTextareaHeight() {
@@ -56,6 +57,10 @@ textInput.addEventListener('input', updateCharacterCounts);
 resetButton.addEventListener('click', () => {
     textInput.value = '';
     updateCharacterCounts(); // カウントをリセット
+});
+copyButton.addEventListener('click', () => {
+    textInput.select(); // テキストエリアの内容を選択
+    document.execCommand('copy'); // クリップボードにコピー
 });
 window.addEventListener('resize', adjustTitleForWidth); // ウィンドウのリサイズを監視
 
